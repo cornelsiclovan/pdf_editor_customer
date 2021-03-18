@@ -316,7 +316,7 @@ const NewClient = () => {
             <Modal
                 show={showSuccessModal}
                 onCancel={hideSuccessModal}
-                header="Datele dumneavoastra au fost preluate cu succes, verificati emailul."
+                header="Datele dumneavoastra au fost preluate cu succes."
                 footerClass="place-item__modal-actions"
                 footer={
                     <React.Fragment>
