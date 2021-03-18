@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MainNavigation from './Navigation/MainNavigation';
+import Clients from './client/pages/Clients';
+import NewClient from './client/pages/NewClient';
+import UpdateClient from './client/pages/UpdateClient';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+let routes;
+
+const App = () => {
+    routes = (
+        <Switch>
+            <Route path="/" exact>
+                 <Clients />
+            </Route>
+            <Route path="/clienti/new" exact>
+                  <NewClient />
+            </Route>
+            <Route path="/clienti/:clientId" exact>
+                <UpdateClient />
+            </Route>
+           
+        </Switch>
+    );
+
+    return (
+        <Router>
+            <MainNavigation />
+            <main>
+                {routes}
+            </main>
+        </Router>
+    )
+};
 
 export default App;
