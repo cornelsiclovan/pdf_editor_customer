@@ -209,6 +209,7 @@ const NewClient = () => {
 
         try {
             const formData = new FormData();
+            formData.append('tribunalul', formState.inputs.tribunalul.value);
             formData.append('subsemnatul', formState.inputs.subsemnatul.value);
             formData.append('domiciliat', formState.inputs.domiciliat.value);
             formData.append('strada', formState.inputs.strada.value);
